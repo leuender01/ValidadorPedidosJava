@@ -19,7 +19,5 @@ public class Pagamento
     public void setMetodoPagamento(MetodoPagamento metodoPagamento){ this.metodoPagamento = metodoPagamento; }
 
     @Override
-    public String toString() {
-        return metodoPagamento.toString();
-    }
+    public String toString() { return metodoPagamento.toString();}
 }
