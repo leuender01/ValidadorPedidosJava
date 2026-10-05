@@ -1,20 +1,16 @@
 package app;
 
-interface ItemInterface {
-    public String getName();
-}
-
-public class Item implements ItemInterface{
+public class Item
+{
     private String name;
     public Item(String name)
     {
         this.name = name;
     }
 
-    public String getName()
+    @Override
+    public String toString() 
     {
         return name;
     }
-
 }
-
