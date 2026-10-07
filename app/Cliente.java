@@ -1,6 +1,12 @@
 package app;
 
 import java.util.Objects;
+import app.execoes.NomePequeno;
+import app.execoes.NomeGrande;
+import app.execoes.TamanhoCpfInvalido;
+import app.execoes.FormatoCpfInvalido;
+import app.execoes.FormatoInvalido;
+import app.execoes.IdadeInvalida;
 
 interface ClienteInterface  
 {
@@ -14,6 +20,8 @@ interface ClienteInterface
 
 public class Cliente implements ClienteInterface
 {
+    private final int TAMANHO_MAXIMO = 50;
+
     private String nome;
     private String cpf;
     private int idade;
@@ -22,6 +30,17 @@ public class Cliente implements ClienteInterface
         this.idade = idade;
         this.cpf = cpf;
         this.nome = nome;
+        validarCliente();
+    }
+
+    private void validarCliente() throws NomePequeno, TamanhoCpfInvalido, FormatoInvalido, FormatoCpfInvalido
+    {
+        if(this.nome == null || this.nome.length()  < 7 ) throw new NomePequeno();
+        if(!this.nome.matches("^[a-zA-Z].+$") || this.nome.matches("(.)\\1{3,}")) throw new FormatoInvalido();
+        if(this.nome.length() > TAMANHO_MAXIMO) throw new NomeGrande();
+        if(this.cpf == null || this.cpf.length() < 11 || this.cpf.length() > 11) throw new TamanhoCpfInvalido();
+        if(!this.cpf.matches("\\d.*") || this.cpf.matches("(\\d)\\1{3,}")) throw new FormatoCpfInvalido();
+        if(this.idade > 120 || this.idade < 18) throw new IdadeInvalida(this.idade);
     }
 
     @Override

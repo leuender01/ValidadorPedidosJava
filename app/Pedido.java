@@ -13,9 +13,9 @@ public class Pedido implements PedidoInteface
     private   List<Item> itemList = new ArrayList<Item>();
     private   Cliente cliente;
     private   Pagamento pagamento;
-    private   String endereco;
+    private   Endereco endereco;
 
-    public Pedido(String endereco, Cliente cliente, Pagamento pagamento)
+    public Pedido(Endereco endereco, Cliente cliente, Pagamento pagamento)
     {
         this.cliente = cliente;
         this.pagamento = pagamento;

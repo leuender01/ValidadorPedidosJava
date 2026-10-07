@@ -1,22 +1,25 @@
 package app;
 
-enum MetodoPagamento
-{
-    PIX,
-    CARTAO_CREDITO,
-    CARTAO_DEBITO,
-    BOLETO
-}
+import app.execoes.MetodoPagamentoInvalido;
+import app.execoes.ValorBaixo;
 
 public class Pagamento
 {
-    MetodoPagamento metodoPagamento;
-    public Pagamento(MetodoPagamento pay)
+    private MetodoPagamento metodoPagamento;
+    private double value;
+    private final double VALOR_MINIMO = 30.0;
+
+    public Pagamento(MetodoPagamento pay, double value)
     {
         this.metodoPagamento = pay;
+        this.value = value;
+        validarCLente();
     }
-
-    public void setMetodoPagamento(MetodoPagamento metodoPagamento){ this.metodoPagamento = metodoPagamento; }
+    private void validarCLente() throws MetodoPagamentoInvalido, ValorBaixo
+    {
+        if(this.metodoPagamento == null) throw new MetodoPagamentoInvalido();
+        if(this.value < VALOR_MINIMO) throw new ValorBaixo(this.value);
+    }
 
     @Override
     public String toString() { return metodoPagamento.toString();}
