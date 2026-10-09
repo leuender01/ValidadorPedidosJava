@@ -1,17 +1,20 @@
 package app.validadores;
 
+import app.Cliente;
 import app.execoes.NomeGrande;
 import app.execoes.NomePequeno;
 
-public class ValidarTamanhoNomeCliente extends ValidarString
+public class ValidarTamanhoNomeCliente extends ValidarCliente
 {
     private final int TAMANHO_MAXIMO = 50;
+    private final int TAMANHO_MINIMO = 5;
 
     @Override
-    public boolean validar(String data) throws NomeGrande, NomePequeno
+    public boolean validar(Cliente cliente) throws NomeGrande, NomePequeno
     {
-        if(data == null ||  data.isEmpty()) throw new NomePequeno();
-        if(data.length()  > TAMANHO_MAXIMO) throw new NomeGrande();
-        return validarProximo(data);
+        if(cliente.getName() == null ||  cliente.getName().isEmpty() || cliente.getName().length() < TAMANHO_MINIMO) throw new NomePequeno();
+        if(cliente.getName().length()  > TAMANHO_MAXIMO) throw new NomeGrande();
+        System.out.println(getCamada());
+        return this.validarProximo(cliente);
     }
 }
