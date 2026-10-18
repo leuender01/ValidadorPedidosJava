@@ -1,6 +1,7 @@
 package app.tests;
 
 import app.Cliente;
+import app.execoes.CpfInvalido;
 import app.execoes.FormatoCpfInvalido;
 import app.execoes.FormatoInvalido;
 import app.execoes.IdadeInvalida;
@@ -13,14 +14,17 @@ import app.validadores.ValidarFormatoNomeCliente;
 import app.validadores.ValidarIdadeCLiente;
 import app.validadores.ValidarTamanhoCpfCliente;
 import app.validadores.ValidarTamanhoNomeCliente;
+import app.validadores.ValidarCpfValido;
 
 public class TestarCliente {
    public static void main(String[] args) {
        ValidarCliente validarCliente = new ValidarTamanhoNomeCliente()
-           .setproximo(new ValidarFormatoNomeCliente()
+           .setproximo( new ValidarFormatoNomeCliente()
                    .setproximo(new ValidarTamanhoCpfCliente()
-                       .setproximo(new ValidarFormatoCpfCliente()
-                           .setproximo(new ValidarIdadeCLiente()
+                       .setproximo(new  ValidarFormatoCpfCliente()
+                           .setproximo(new ValidarCpfValido()
+                               .setproximo(new ValidarIdadeCLiente()
+                                   )
                                )
                            )
                        )
@@ -36,10 +40,12 @@ public class TestarCliente {
            new Cliente( "Leuender", "eusoubatma", 20),
            new Cliente( "Leuender", "11111111111", 300),
            new Cliente( "Leuender", "01291029932", 300),
-           new Cliente( "Leuender", "01291029932", 55),
+           new Cliente( "Leuender", "01291029900", 55),
            new Cliente( "LLLLLLL", "01291029932", 55),
            new Cliente( "aisdfhjjksjskdksjdksjdksdj3sdjkhjdjkfjsdkjf934893903940349", "01291029932", 55),
+           new Cliente( "aisdfhjjksjskdksjdksjdksdj3sdjkhjdjkfjsdkjf934893903940349", "01291029902", 55),
        }; 
+
        for(var cliente : clientes)
        {
            try {
@@ -57,6 +63,8 @@ public class TestarCliente {
                System.out.println(cliente.getCpf() + " : " +  e.getMessage() + "   ❌");
            } catch (IdadeInvalida e) {
                System.out.println(cliente.getIdade() + " : " +  e.getMessage() + "   ❌");
+           } catch (CpfInvalido e) {
+               System.out.println(cliente.getCpf() + " : " +  e.getMessage() + "   ❌");
            }
        }
    }

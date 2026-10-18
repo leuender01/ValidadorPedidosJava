@@ -3,6 +3,7 @@ import app.Cliente;
 
 public abstract class  ValidarCliente
 {
+    protected final int TAMANHO_CPF = 11;
     private ValidarCliente proximo;
     protected int camada = 0;
     public ValidarCliente setproximo(ValidarCliente proximo) 

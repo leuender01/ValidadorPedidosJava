@@ -10,7 +10,6 @@ public class ValidarEnderecoTamanho extends ValidarEndereco
     public boolean validar(Endereco endereco) throws EnderecoInvalido 
     {
         if(endereco.getEndereco() == null  || endereco.getEndereco().length() < TAMANHO_MINIMO || endereco.getEndereco().length() > TAMANHO_MAXIMO) throw new EnderecoInvalido();
-        System.out.println(getCamada());
         return this.validarProximo(endereco);
     }
 }

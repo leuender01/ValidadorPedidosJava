@@ -14,7 +14,6 @@ public class ValidarTamanhoNomeCliente extends ValidarCliente
     {
         if(cliente.getName() == null ||  cliente.getName().isEmpty() || cliente.getName().length() < TAMANHO_MINIMO) throw new NomePequeno();
         if(cliente.getName().length()  > TAMANHO_MAXIMO) throw new NomeGrande();
-        System.out.println(getCamada());
         return this.validarProximo(cliente);
     }
 }
