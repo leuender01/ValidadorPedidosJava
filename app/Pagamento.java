@@ -14,5 +14,5 @@ public class Pagamento
     public double getValor() { return this.value; }
 
     @Override
-    public String toString() { return metodoPagamento.toString();}
+    public String toString() { return (metodoPagamento != null) ? metodoPagamento.toString() : "NULL";}
 }

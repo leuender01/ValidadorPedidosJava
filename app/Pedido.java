@@ -21,6 +21,9 @@ public class Pedido implements PedidoInteface
         this.pagamento = pagamento;
         this.endereco = endereco;
     }
+    public Cliente getCliente() { return cliente; }
+    public Pagamento getPagamento() { return pagamento; }
+    public Endereco getEndereco() { return endereco; }
 
     @Override
     public boolean addItem(Item item) {
@@ -59,6 +62,6 @@ public class Pedido implements PedidoInteface
 
     @Override
     public String toString() {
-        return cliente + "\n\rMetodoPagamento: " + pagamento + "\n\rEndereço: " + endereco;
+        return cliente.toString() + "\n\rMetodoPagamento: " + pagamento.toString() + "\n\rEndereço: " + endereco.toString();
     }
 }

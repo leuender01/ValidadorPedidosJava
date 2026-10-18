@@ -17,7 +17,7 @@ public class ValidarCpfValido extends ValidarCliente {
         int somaProdutos = 0;
         for(int i = 0 ; i < (tamanho - 1) ; i++){
             int valorMultiplicacao =  tamanho - i;
-            somaProdutos += ((cpf.charAt(i) - '0') * valorMultiplicacao) ;
+            somaProdutos += (cpf.charAt(i) - '0') * valorMultiplicacao;
         }
         int resultado = somaProdutos % TAMANHO_CPF; 
         resultado = (resultado < 2) ?  0 :  TAMANHO_CPF - resultado;
