@@ -1,7 +1,7 @@
 package app.validadores;
 
 import app.Item;
-import app.execoes.FormatoInvalido;
+import app.excecoes.FormatoInvalido;
 
 public class ValidarFormatoItem extends Validar<Item>
 {

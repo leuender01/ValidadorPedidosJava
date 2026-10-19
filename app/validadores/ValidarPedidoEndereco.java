@@ -8,7 +8,7 @@ public class ValidarPedidoEndereco extends Validar<Pedido>
     public void verificar(Pedido pedido) {
         Validar<Endereco> validarEndereco = 
         new ValidarEnderecoTamanho()
-        .setproximo(new ValidarEnderecoFormato()
+        .setProximo(new ValidarEnderecoFormato()
         )
         ; 
         validarEndereco.validar(pedido.getEndereco());

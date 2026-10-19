@@ -1,7 +1,7 @@
 package app.validadores;
 
 import app.Cliente;
-import app.execoes.FormatoInvalido;
+import app.excecoes.FormatoInvalido;
 
 public class ValidarFormatoNomeCliente extends Validar<Cliente> 
 {

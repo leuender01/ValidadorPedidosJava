@@ -1,8 +1,8 @@
 package app.validadores;
 import app.Cliente;
-import app.execoes.IdadeInvalida;
+import app.excecoes.IdadeInvalida;
 
-public class ValidarIdadeCLiente extends Validar<Cliente> 
+public class ValidarIdadeCliente extends Validar<Cliente> 
 {
     @Override
     public void verificar(Cliente cliente) {

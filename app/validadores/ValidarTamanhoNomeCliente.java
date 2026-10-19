@@ -1,8 +1,8 @@
 package app.validadores;
 
 import app.Cliente;
-import app.execoes.NomeGrande;
-import app.execoes.NomePequeno;
+import app.excecoes.NomeGrande;
+import app.excecoes.NomePequeno;
 
 public class ValidarTamanhoNomeCliente extends Validar<Cliente>
 {

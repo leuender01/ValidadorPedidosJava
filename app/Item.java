@@ -1,7 +1,7 @@
 package app;
 import java.util.Objects;
 
-import app.execoes.QuantidadeInvalida;
+import app.excecoes.QuantidadeInvalida;
 
 public class Item
 {

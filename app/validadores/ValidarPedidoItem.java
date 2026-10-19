@@ -9,7 +9,7 @@ public class ValidarPedidoItem extends Validar<Pedido>
     public void verificar(Pedido pedido) {
         Validar<Item> validarItem =
         new ValidarTamanhoNomeItem()
-        .setproximo(new ValidarFormatoItem()
+        .setProximo(new ValidarFormatoItem()
         );
         List<Item> items = pedido.listCar();
         for(Item item : items)

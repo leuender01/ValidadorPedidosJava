@@ -17,7 +17,7 @@ public class TestarPagamento {
         };
         Validar<Pagamento> validarPagamento =
             new ValidarMetodoPagamento()
-            .setproximo(new ValidarValorPagamento());
+            .setProximo(new ValidarValorPagamento());
         for(var pagamento : pagamentos)
         {
             try {

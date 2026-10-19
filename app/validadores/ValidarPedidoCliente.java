@@ -9,11 +9,11 @@ public class ValidarPedidoCliente extends Validar<Pedido>
     {
         Validar<Cliente> validarCliente =
         new ValidarTamanhoNomeCliente()
-        .setproximo(new ValidarFormatoNomeCliente()
-        .setproximo(new ValidarTamanhoCpfCliente()
-        .setproximo(new ValidarFormatoCpfCliente()
-        .setproximo(new ValidarCpfValido()
-        .setproximo(new ValidarIdadeCLiente()
+        .setProximo(new ValidarFormatoNomeCliente()
+        .setProximo(new ValidarTamanhoCpfCliente()
+        .setProximo(new ValidarFormatoCpfCliente()
+        .setProximo(new ValidarCpfValido()
+        .setProximo(new ValidarIdadeCliente()
         )
         )
         )

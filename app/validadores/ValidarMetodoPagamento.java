@@ -1,7 +1,7 @@
 package app.validadores;
 import app.MetodoPagamento;
 import app.Pagamento;
-import app.execoes.MetodoPagamentoInvalido;
+import app.excecoes.MetodoPagamentoInvalido;
 
 /*
     private void validarCLente() throws MetodoPagamentoInvalido, ValorBaixo

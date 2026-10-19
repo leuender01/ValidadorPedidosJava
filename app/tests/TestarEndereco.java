@@ -7,7 +7,7 @@ import app.validadores.ValidarEnderecoTamanho;
 
 public class TestarEndereco {
     public static void main(String[] args) {
-        Validar<Endereco> validatorEndereco = new ValidarEnderecoTamanho().setproximo(new ValidarEnderecoFormato());
+        Validar<Endereco> validatorEndereco = new ValidarEnderecoTamanho().setProximo(new ValidarEnderecoFormato());
         Endereco[] enderecos = new Endereco[]
         {
             new Endereco("Rua A, 123"),

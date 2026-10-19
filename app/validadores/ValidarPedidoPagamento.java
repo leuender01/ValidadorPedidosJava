@@ -8,7 +8,7 @@ public class ValidarPedidoPagamento extends Validar<Pedido>
     public void verificar(Pedido pedido) {
         Validar<Pagamento> validarPagamento = 
         new ValidarValorPagamento()
-        .setproximo(new ValidarMetodoPagamento()
+        .setProximo(new ValidarMetodoPagamento()
         );
 
         Pagamento pagamento = pedido.getPagamento();

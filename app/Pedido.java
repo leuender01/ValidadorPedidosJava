@@ -2,13 +2,13 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-interface PedidoInteface {
+interface PedidoInterface {
     public boolean addItem(Item item);
     public boolean removeItem(Item item);
     public List<Item> listCar();
 }
 
-public class Pedido implements PedidoInteface
+public class Pedido implements PedidoInterface
 {
     private   List<Item> itemList = new ArrayList<Item>();
     private   Cliente cliente;

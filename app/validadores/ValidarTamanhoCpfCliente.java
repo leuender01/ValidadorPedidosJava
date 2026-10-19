@@ -1,5 +1,5 @@
 package app.validadores;
-import app.execoes.TamanhoCpfInvalido;
+import app.excecoes.TamanhoCpfInvalido;
 import app.Cliente;
 
 public class ValidarTamanhoCpfCliente extends Validar<Cliente>

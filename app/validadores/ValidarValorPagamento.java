@@ -1,6 +1,6 @@
 package app.validadores;
 import app.Pagamento;
-import app.execoes.ValorBaixo;
+import app.excecoes.ValorBaixo;
 
 public class ValidarValorPagamento extends Validar<Pagamento>
 {

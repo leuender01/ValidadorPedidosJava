@@ -1,4 +1,4 @@
-package app.execoes;
+package app.excecoes;
 
 public class FormatoInvalido extends RuntimeException
 {

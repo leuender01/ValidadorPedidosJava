@@ -1,6 +1,6 @@
 package app.validadores;
 
-import app.execoes.FormatoCpfInvalido;
+import app.excecoes.FormatoCpfInvalido;
 import app.Cliente;
 
 public class ValidarFormatoCpfCliente extends Validar<Cliente>

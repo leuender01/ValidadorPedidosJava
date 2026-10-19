@@ -21,7 +21,7 @@ public class TestarItem {
         };
         Validar<Item> validarItem = 
             new ValidarTamanhoNomeItem()
-            .setproximo(new ValidarFormatoItem());
+            .setProximo(new ValidarFormatoItem());
         for(var item : itens)
         {
             try {

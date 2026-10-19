@@ -18,9 +18,9 @@ public class TestarPedido {
 
         Validar<Pedido> validarPedido =
         new ValidarPedidoCliente()
-        .setproximo(new ValidarPedidoEndereco()
-        .setproximo(new ValidarPedidoPagamento()
-        .setproximo(new ValidarPedidoItem()
+        .setProximo(new ValidarPedidoEndereco()
+        .setProximo(new ValidarPedidoPagamento()
+        .setProximo(new ValidarPedidoItem()
         )
         )
         );

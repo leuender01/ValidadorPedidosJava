@@ -1,6 +1,6 @@
 package app.validadores;
 import app.Endereco;
-import app.execoes.EnderecoInvalido;
+import app.excecoes.EnderecoInvalido;
 
 public class ValidarEnderecoTamanho extends Validar<Endereco>
 {

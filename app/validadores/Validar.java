@@ -1,10 +1,10 @@
 package app.validadores;
-import app.execoes.DadoNulo;
+import app.excecoes.DadoNulo;
 
 public abstract class Validar<T>
 {
     private Validar<T> proximo;
-    public Validar<T> setproximo(Validar<T> proximo) 
+    public Validar<T> setProximo(Validar<T> proximo) 
     {
         this.proximo = proximo;
         return this;

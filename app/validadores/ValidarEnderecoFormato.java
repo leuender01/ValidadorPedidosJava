@@ -1,5 +1,5 @@
 package app.validadores;
-import app.execoes.FormatoInvalido;
+import app.excecoes.FormatoInvalido;
 import app.Endereco;
 
 public class ValidarEnderecoFormato extends Validar<Endereco>
