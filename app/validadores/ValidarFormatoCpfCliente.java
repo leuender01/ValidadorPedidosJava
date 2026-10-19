@@ -3,11 +3,11 @@ package app.validadores;
 import app.execoes.FormatoCpfInvalido;
 import app.Cliente;
 
-public class ValidarFormatoCpfCliente extends ValidarCliente
+public class ValidarFormatoCpfCliente extends Validar<Cliente>
 {
     @Override
-    public boolean validar(Cliente cliente) {
-        if(cliente.getCpf().matches("(.)\\1{3,}") || !cliente.getCpf().matches("^\\d+$")) throw new FormatoCpfInvalido();
-        return this.validarProximo(cliente);
+    public void verificar(Cliente cliente) {
+        if(cliente.getCpf().matches("(.)\\1{3,}") ||
+                !cliente.getCpf().matches("^\\d+$")) throw new FormatoCpfInvalido();
     }
 }

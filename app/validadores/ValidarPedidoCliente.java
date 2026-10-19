@@ -1,12 +1,13 @@
 package app.validadores;
 import app.Pedido;
+import app.Cliente;
 
-public class ValidarPedidoCliente extends ValidarPedido
+public class ValidarPedidoCliente extends Validar<Pedido>
 {
     @Override
-    public boolean validar(Pedido pedido) 
+    public void verificar(Pedido pedido) 
     {
-        ValidarCliente validarCliente =
+        Validar<Cliente> validarCliente =
         new ValidarTamanhoNomeCliente()
         .setproximo(new ValidarFormatoNomeCliente()
         .setproximo(new ValidarTamanhoCpfCliente()
@@ -19,6 +20,6 @@ public class ValidarPedidoCliente extends ValidarPedido
         )
         );
         validarCliente.validar(pedido.getCliente());
-        return this.validarProximo(pedido);
+        return;
     }
 }

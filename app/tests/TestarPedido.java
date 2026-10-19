@@ -6,17 +6,17 @@ import app.Cliente;
 import app.Item;
 import app.Endereco;
 import app.Pedido;
+import app.validadores.Validar;
 import app.validadores.ValidarPedidoCliente;
 import app.validadores.ValidarPedidoEndereco;
 import app.validadores.ValidarPedidoItem;
 import app.validadores.ValidarPedidoPagamento;
-import app.validadores.ValidarPedido;
 import app.Pagamento;
 
 public class TestarPedido {
     public static void main(String[] args) {
 
-        ValidarPedido validarPedido =
+        Validar<Pedido> validarPedido =
         new ValidarPedidoCliente()
         .setproximo(new ValidarPedidoEndereco()
         .setproximo(new ValidarPedidoPagamento()

@@ -10,19 +10,16 @@ import app.execoes.MetodoPagamentoInvalido;
         if(this.value < VALOR_MINIMO) throw new ValorBaixo(this.value);
     }
  */
-public class ValidarMetodoPagamento extends ValidarPagamento
+public class ValidarMetodoPagamento extends Validar<Pagamento>
 {
     private static final MetodoPagamento[] METODOS_VALIDOS = {MetodoPagamento.BOLETO, MetodoPagamento.CARTAO_DEBITO, MetodoPagamento.CARTAO_CREDITO, MetodoPagamento.PIX}; 
     @Override
-    public boolean validar(Pagamento pagamento) 
+    public void verificar(Pagamento pagamento) 
     {
         if(pagamento.getMetodoPagamento() == null) throw new MetodoPagamentoInvalido();
         for(MetodoPagamento metodo : METODOS_VALIDOS)
         {
-            if(pagamento.getMetodoPagamento() == metodo)
-            {
-                return validarProximo(pagamento);
-            }
+            if(pagamento.getMetodoPagamento() == metodo) return;
         }
         throw new MetodoPagamentoInvalido();
     }

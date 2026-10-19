@@ -2,11 +2,11 @@ package app.validadores;
 import app.Cliente;
 import app.execoes.IdadeInvalida;
 
-public class ValidarIdadeCLiente extends ValidarCliente 
+public class ValidarIdadeCLiente extends Validar<Cliente> 
 {
     @Override
-    public boolean validar(Cliente cliente) {
-        if(cliente.getIdade() > 120 || cliente.getIdade() < 18) throw new IdadeInvalida(cliente.getIdade());
-        return this.validarProximo(cliente);
+    public void verificar(Cliente cliente) {
+        if(cliente.getIdade() > 120 ||
+            cliente.getIdade() < 18) throw new IdadeInvalida(cliente.getIdade());
     }
 }

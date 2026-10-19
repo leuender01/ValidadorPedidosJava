@@ -1,8 +1,8 @@
 package app.tests;
 
 import app.Item;
+import app.validadores.Validar;
 import app.validadores.ValidarFormatoItem;
-import app.validadores.ValidarItem;
 import app.validadores.ValidarTamanhoNomeItem;
 
 public class TestarItem {
@@ -19,7 +19,9 @@ public class TestarItem {
             new Item("llllllll"),
             new Item(" Cav")
         };
-        ValidarItem validarItem = new ValidarTamanhoNomeItem().setproximo(new ValidarFormatoItem());
+        Validar<Item> validarItem = 
+            new ValidarTamanhoNomeItem()
+            .setproximo(new ValidarFormatoItem());
         for(var item : itens)
         {
             try {

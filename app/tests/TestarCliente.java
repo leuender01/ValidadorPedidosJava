@@ -8,17 +8,17 @@ import app.execoes.IdadeInvalida;
 import app.execoes.NomeGrande;
 import app.execoes.NomePequeno;
 import app.execoes.TamanhoCpfInvalido;
-import app.validadores.ValidarCliente;
 import app.validadores.ValidarFormatoCpfCliente;
 import app.validadores.ValidarFormatoNomeCliente;
 import app.validadores.ValidarIdadeCLiente;
 import app.validadores.ValidarTamanhoCpfCliente;
 import app.validadores.ValidarTamanhoNomeCliente;
+import app.validadores.Validar;
 import app.validadores.ValidarCpfValido;
 
 public class TestarCliente {
    public static void main(String[] args) {
-       ValidarCliente validarCliente = new ValidarTamanhoNomeCliente()
+       Validar<Cliente> validarCliente = new ValidarTamanhoNomeCliente()
            .setproximo( new ValidarFormatoNomeCliente()
                    .setproximo(new ValidarTamanhoCpfCliente()
                        .setproximo(new  ValidarFormatoCpfCliente()

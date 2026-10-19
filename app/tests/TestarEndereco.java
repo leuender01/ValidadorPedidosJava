@@ -1,13 +1,13 @@
 package app.tests;
 import app.Endereco;
-import app.validadores.ValidarEndereco;
+import app.validadores.Validar;
 import app.validadores.ValidarEnderecoFormato;
 import app.validadores.ValidarEnderecoTamanho;
 
 
 public class TestarEndereco {
     public static void main(String[] args) {
-        ValidarEndereco validatorEndereco = new ValidarEnderecoTamanho().setproximo(new ValidarEnderecoFormato());
+        Validar<Endereco> validatorEndereco = new ValidarEnderecoTamanho().setproximo(new ValidarEnderecoFormato());
         Endereco[] enderecos = new Endereco[]
         {
             new Endereco("Rua A, 123"),

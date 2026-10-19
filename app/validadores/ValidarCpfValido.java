@@ -3,13 +3,14 @@ package app.validadores;
 import app.Cliente;
 import app.execoes.CpfInvalido;
 
-public class ValidarCpfValido extends ValidarCliente {
+public class ValidarCpfValido extends Validar<Cliente>
+{
+    final int TAMANHO_CPF = 11;
     @Override
-    public boolean validar(Cliente cliente) {
+    public void verificar(Cliente cliente) {
         String cpf = cliente.getCpf();
         percorrerCpf(TAMANHO_CPF - 1, cpf);
         percorrerCpf(TAMANHO_CPF, cpf);
-        return validarProximo(cliente);
     }
     private boolean percorrerCpf(int tamanho , String cpf) 
     {

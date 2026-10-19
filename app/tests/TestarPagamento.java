@@ -1,7 +1,7 @@
 package app.tests;
 import app.Pagamento;
+import app.validadores.Validar;
 import app.validadores.ValidarMetodoPagamento;
-import app.validadores.ValidarPagamento;
 import app.validadores.ValidarValorPagamento;
 import app.MetodoPagamento;
 
@@ -15,7 +15,9 @@ public class TestarPagamento {
             new Pagamento(null, 1.0),
             new Pagamento(null, 29.0)
         };
-        ValidarPagamento validarPagamento = new ValidarMetodoPagamento().setproximo(new ValidarValorPagamento());
+        Validar<Pagamento> validarPagamento =
+            new ValidarMetodoPagamento()
+            .setproximo(new ValidarValorPagamento());
         for(var pagamento : pagamentos)
         {
             try {
